@@ -13,3 +13,4 @@ Due to size reasons, the model is not uploaded to GitHub but to HuggingFace wher
 you can try out the model right away.
 
 HuggingFace Link - https://huggingface.co/spaces/LeoFades/COS30082_Bird_Species_Classification
+YouTube Link - https://youtu.be/RZbk90Mvp5g
