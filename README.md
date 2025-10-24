@@ -7,6 +7,8 @@ This assignment focuses on addressing the problem of overfitting in a bird speci
 
 Refer to training.ipynb for source code
 
+Several strategies are explored, including data augmentation, transfer learning with frozen and unfrozen layers, regularization techniques such as dropout and weight decay, and learning rate tuning during fine-tuning. The training and validation performances are analyzed across epochs to identify overfitting trends, and a confusion matrix is used to further investigate misclassifications. The final objective is to achieve a balanced model with improved validation accuracy while minimizing the gap between training and validation performance.
+
 Due to size reasons, the model is not uploaded to GitHub but to HuggingFace where
 you can try out the model right away.
 
