@@ -1,0 +1,34 @@
+AML A1 Training Log
+
+1st train
+Heard that it will overfit so i gave it a very heavy augmentation, small learning rate and heavy regularization(dropout). I did not freeze the backbone to train the classifier head first for a few epoch. result is underfitting. 60+% training accuracy.
+
+2nd train
+Lighter augmentation, changed dropout(regularization) from 0.4 to 0.3,
+added backbone freezing for the first few epochs then unfreeze, change epoch from 50 to 20, weight decay from 1e-4 to 1e-5. damn i didn't change learning rate at all. ok now it is overfitted as hell - 99% training accuracy, 74% validation accuracy
+
+3rd train
+ok now i change learning rate from 0.001 to 0.0001. i realized weight decay was same pre and post freeze, so i change post freeze to 1e-4. Augmentations are now stronger(medium). ok i didn't have enough epochs for it as there were no plateau
+
+4th train
+changed nothing other than scheduler after freezing, stepLR to ReduceLROnPlateau as it is too abrupt. increased epoch from 20 to 30. wtf why is validation now higher than training accuracy in the early epochs? ok nvm, just the first few. anyway it is overfitted as hell after epoch 22, with final 94 to 78 accuracy.
+
+5th train
+more weight decay (1e-4), dropout (0.3 to 0.5), more augmentation(affine), also reduced epoch to 25. now it looks good but overall accuracy is shi(85 - 75) like that forgot ah
+
+
+6th train
+change optimizer n scheduler after unfreezing, with diff lr for each layer(lower), using cosine annealing LR now for scheduler, heavier augmentation. maybe next train i just try efficientnet la. ya ok this shi is more overfitted than 5th. (92 - 71)
+
+7th train
+try partial unfreezing only, weight decay to 5e-4. still over fit as fuk (93-73)
+
+8th train
+not enough free units on google colab to train, but finished at 77-74, next up try with different classifier head cuz this one looks like it wont go up anymore, also epoch is now 40 but stopped at 30 cuz session terminated
+
+9th train
+ok this looks good but i think need more epochs. 89 80 now!!! with diff classifier head and convnext tiny
+
+
+10th train
+CHECKPOINT TRAINING!! LETS GOOO WE ARE DONE IT PLATEAU! 90 80!!!
